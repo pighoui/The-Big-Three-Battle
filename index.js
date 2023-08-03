@@ -10,4 +10,30 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+function getPlayerChoice() {
+    let playerChoice;
+    do {
+    playerChoice = prompt("Choose between rock, paper and scissors!");
+    playerChoice = playerChoice.toLowerCase();
+    } while (playerChoice != 'rock' && playerChoice != 'paper' && playerChoice != 'scissors');
+    return playerChoice;
+}
+
+console.log(getPlayerChoice());
+
+function playRound(playerSelection, computerSelection) {
+
+}
+
+/* function game 
+prompt user for selection
+convert selection to lowercase 
+if selection is rock
+    if computerchoice is rock, return tie
+    if computerchoice is paper, return you lose
+    if computerchoice is scissors, return you win
+    
+else if ...
+else if ...
+else 
+    return invalid input, try again*/
