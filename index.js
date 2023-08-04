@@ -1,15 +1,3 @@
-function getComputerChoice() {
-    // returns 1, 2 or 3 randomly
-    let randInt = Math.floor(Math.random() * 3) + 1;
-    if (randInt == 1) {
-        return "Rock";
-    } else if (randInt == 2) {
-        return "Paper";
-    } else {
-        return "Scissors";
-    }
-}
-
 function getPlayerChoice() {
     let playerChoice;
     do {
@@ -19,21 +7,44 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
-console.log(getPlayerChoice());
-
-function playRound(playerSelection, computerSelection) {
-
+function getComputerChoice() {
+    // returns 1, 2 or 3 randomly
+    let randInt = Math.floor(Math.random() * 3) + 1;
+    if (randInt == 1) {
+        return "rock";
+    } else if (randInt == 2) {
+        return "paper";
+    } else {
+        return "scissors";
+    }
 }
 
-/* function game 
-prompt user for selection
-convert selection to lowercase 
-if selection is rock
-    if computerchoice is rock, return tie
-    if computerchoice is paper, return you lose
-    if computerchoice is scissors, return you win
-    
-else if ...
-else if ...
-else 
-    return invalid input, try again*/
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection == 'rock') {
+        console.log('You chose ' + playerSelection);
+        console.log('Computer chose ' + computerSelection)
+        if (computerSelection == 'rock') { return 'Tie!'; }
+        else if (computerSelection == 'paper') { return 'You Lose!'; }
+        else if (computerSelection == 'scissors') { return 'You Win!'; }
+    }
+
+    else if (playerSelection == 'paper') {
+        console.log('You chose ' + playerSelection);
+        console.log('Computer chose ' + computerSelection)
+        if (computerSelection == 'rock') { return 'You Win'; }
+        else if (computerSelection == 'paper') { return 'Tie!'; }
+        else if (computerSelection == 'scissors') { return 'You Lose!'; }
+    }
+
+    else if (playerSelection == 'scissors') {
+        console.log('You chose ' + playerSelection);
+        console.log('Computer chose ' + computerSelection)
+        if (computerSelection == 'rock') { return 'You Lose'; }
+        else if (computerSelection == 'paper') { return 'You Win!'; }
+        else if (computerSelection == 'scissors') { return 'tie!'; }
+    }
+
+    else { return 'function failed'; }
+}
+
+console.log(playRound(getPlayerChoice(), getComputerChoice()))
