@@ -43,8 +43,6 @@ function playRound(playerSelection, computerSelection) {
         else if (computerSelection == 'paper') { return 'You Win!'; }
         else if (computerSelection == 'scissors') { return 'tie!'; }
     }
-
-    else { return 'function failed'; }
 }
 
 function game() {
