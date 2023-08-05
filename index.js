@@ -31,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == 'paper') {
         console.log('You chose ' + playerSelection);
         console.log('Computer chose ' + computerSelection)
-        if (computerSelection == 'rock') { return 'You Win'; }
+        if (computerSelection == 'rock') { return 'You Win!'; }
         else if (computerSelection == 'paper') { return 'Tie!'; }
         else if (computerSelection == 'scissors') { return 'You Lose!'; }
     }
@@ -39,7 +39,7 @@ function playRound(playerSelection, computerSelection) {
     else if (playerSelection == 'scissors') {
         console.log('You chose ' + playerSelection);
         console.log('Computer chose ' + computerSelection)
-        if (computerSelection == 'rock') { return 'You Lose'; }
+        if (computerSelection == 'rock') { return 'You Lose!'; }
         else if (computerSelection == 'paper') { return 'You Win!'; }
         else if (computerSelection == 'scissors') { return 'tie!'; }
     }
@@ -47,4 +47,34 @@ function playRound(playerSelection, computerSelection) {
     else { return 'function failed'; }
 }
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()))
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+    
+    while (playerScore != 3 && computerScore != 3) {
+        round = playRound( getPlayerChoice(), getComputerChoice() ) ;
+
+        if (round == 'You Win!') {
+            playerScore += 1;
+            // prints winner or loser of round
+            console.log(round);
+        } else if (round == 'You Lose!') {
+            computerScore += 1;
+            console.log(round);
+        } else {
+            // tie
+            console.log(round);
+        }
+
+        console.log('Your score is: ' +  playerScore);
+        console.log('Computer score is: ' + computerScore);
+    }
+    if (playerScore == 3) {
+        return 'YOU WON THE MATCH :)';
+    } else {
+        return 'you lost the match :(';
+    }
+}
+
+console.log(game());
+
