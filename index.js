@@ -1,3 +1,4 @@
+// Prompts user to choose rock, paper or scissors
 function getPlayerChoice() {
     let playerChoice;
     do {
@@ -7,6 +8,7 @@ function getPlayerChoice() {
     return playerChoice;
 }
 
+// Randomly generates a computer choice
 function getComputerChoice() {
     // returns 1, 2 or 3 randomly
     let randInt = Math.floor(Math.random() * 3) + 1;
@@ -19,6 +21,7 @@ function getComputerChoice() {
     }
 }
 
+// Returns the winner of the round
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock') {
         console.log('You chose ' + playerSelection);
@@ -45,6 +48,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// Until someone has scored 3 points, the game continues
 function game() {
     let playerScore = 0;
     let computerScore = 0;
