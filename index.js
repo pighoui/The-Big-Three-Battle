@@ -47,13 +47,22 @@ function playRound(playerSelection, computerSelection) {
 function scorer(winner) {
     if (winner.slice(0, 8) == 'You Win!') {
         playerScore += 1;
-    } 
-
-    else if (winner.slice(0, 9) == 'You Lose!') {
+    } else if (winner.slice(0, 9) == 'You Lose!') {
         computerScore += 1;
     } 
+    
+    if (playerScore == 5) playerVictory();
+    else if (computerScore == 5) computerVictory();
 
     return `${playerScore}-${computerScore}`
+}
+
+function playerVictory() {
+
+}
+
+function computerVictory() {
+    
 }
 
 let playerScore = 0;
