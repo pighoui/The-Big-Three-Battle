@@ -30,10 +30,26 @@ function highlightIcon(playerSelection, computerSelection) {
     else if (computerSelection == 'djo-mod') djoModImg.classList.add('blue');
 }
 
-// Returns the winner of the round
+// Plays grunting sound upon click
+function playSound(playerSelection) {
+    if (playerSelection == 'nad') {
+        // audio is always rewound to start, allowing quick succession of grunts
+        nadAudio.currentTime = 0; 
+        nadAudio.play();
+    } else if (playerSelection == 'fed') {
+        fedAudio.currentTime = 0; 
+        fedAudio.play();
+    } else if (playerSelection == 'djo') {
+        djoAudio.currentTime = 0; 
+        djoAudio.play();
+    }    
+}
+
+// Returns the winner of the round, and calls playSound() and highlightIcon()
 function playRound(playerSelection, computerSelection) {
 
     highlightIcon(playerSelection, computerSelection);
+    playSound(playerSelection);
 
     if (playerSelection == 'nad') {
         if (computerSelection == 'nad-mod') {return 'Tie! Neither Nadal can grind out the other.'; }
@@ -85,9 +101,13 @@ const nadImg = document.querySelector("img[src='./images/nadal.png']");
 const fedImg = document.querySelector("img[src='./images/federer.png']");
 const djoImg = document.querySelector("img[src='./images/djokovic.png']");
 
-const nadModImg = document.querySelector("img[src='./images/nadal-mod.jpg'");
-const fedModImg = document.querySelector("img[src='./images/federer-mod.jpg'");
-const djoModImg = document.querySelector("img[src='./images/djokovic-mod.jpg'");
+const nadModImg = document.querySelector("img[src='./images/nadal-mod.jpg']");
+const fedModImg = document.querySelector("img[src='./images/federer-mod.jpg']");
+const djoModImg = document.querySelector("img[src='./images/djokovic-mod.jpg']");
+
+const nadAudio = document.querySelector("audio[src='./audio/nad_sound_effect.mp4']");
+const fedAudio = document.querySelector("audio[src='./audio/fed_sound_effect.mp4']");
+const djoAudio = document.querySelector("audio[src='./audio/djo_sound_effect.mp4']");
 
 nadImg.addEventListener("click", function() {
     winnerOfRound = playRound('nad', getComputerChoice());
