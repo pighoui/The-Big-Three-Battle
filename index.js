@@ -1,3 +1,4 @@
+/*
 // Prompts user to choose rock, paper or scissors
 function getPlayerChoice() {
     let playerChoice;
@@ -7,6 +8,7 @@ function getPlayerChoice() {
     } while (playerChoice != 'rock' && playerChoice != 'paper' && playerChoice != 'scissors');
     return playerChoice;
 }
+*/
 
 // Randomly generates a computer choice
 function getComputerChoice() {
@@ -42,6 +44,23 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+const rockImg = document.querySelector("img[src='./images/rock.jpg']");
+const paperImg = document.querySelector("img[src='./images/paper.jpg'");
+const scissorsImg = document.querySelector("img[src='./images/scissors.jpg'");
+
+rockImg.addEventListener("click", function() {
+    console.log(playRound('rock', getComputerChoice()));
+});
+
+paperImg.addEventListener("click", function() {
+    console.log(playRound('paper', getComputerChoice()));
+});
+
+scissorsImg.addEventListener("click", function() {
+    console.log(playRound('scissors', getComputerChoice()));
+});
+
+/*
 // Until someone has scored 3 points, the game continues
 function game() {
     let playerScore = 0;
@@ -76,4 +95,4 @@ function game() {
 }
 
 console.log(game());
-
+*/
