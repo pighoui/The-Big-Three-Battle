@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  background-color: #84B118;
+  color: #EEECE7;;
+}
+
+h1 {
+  text-align: center;
+  background-color: #553591;
+  margin: 0;
+  padding: 20px 0;
+  font-size: 100px;
+}
+
+ul {
+  /*background-color: #B284BD; */
+  margin: 0;
+  background-color: #553591;;
+  text-align: center;
+  list-style-type: none;
+}
+
+#winnerLine {
+  font-size: px;
+}
+
+#scoreLine {
+  font-size: 50px;
+}
+
+.court {
+  width: 80%;
+  
+}
