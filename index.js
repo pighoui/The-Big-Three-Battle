@@ -52,19 +52,22 @@ function game() {
 
         if (round.slice(0, 8) == 'You Win!') {
             playerScore += 1;
-            // prints winner or loser of round
             console.log(round);
-        } else if (round.slice(0, 9) == 'You Lose!') {
+        } 
+        
+        else if (round.slice(0, 9) == 'You Lose!') {
             computerScore += 1;
             console.log(round);
-        } else {
+        } 
+        
+        else {
             // tie
             console.log(round);
         }
 
-        console.log('Your score is: ' +  playerScore);
-        console.log('Computer score is: ' + computerScore);
+        console.log(`Scoreline: ${playerScore}-${computerScore}`)
     }
+
     if (playerScore == 3) {
         return 'YOU WON THE MATCH :)';
     } else {
