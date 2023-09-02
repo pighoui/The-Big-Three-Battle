@@ -42,6 +42,7 @@ h1 {
 }
 
 .court {
+  border-radius: 10px;
   display: block;
   width: 700px;
 }
