@@ -65,7 +65,7 @@ function game() {
             console.log(round);
         }
 
-        console.log(`Scoreline: ${playerScore}-${computerScore}`)
+        console.log(`${playerScore}-${computerScore}`)
     }
 
     if (playerScore == 3) {
