@@ -21,7 +21,7 @@ function playRound(playerSelection, computerSelection) {
 
     else if (playerSelection == 'fed') {
         if (computerSelection == 'nad-mod') { return 'You Lose! Nad-mod beats Federer.'; }
-        else if (computerSelection == 'fed-mod') { return 'Tie! The Federers seem to be able to read every single shot that comes their way.'; }
+        else if (computerSelection == 'fed-mod') { return 'Tie! The Federers seem to read every single shot that comes their way.'; }
         else if (computerSelection == 'djo-mod') { return 'You Win! Federer beats djo-mod.'; }
     }
 
