@@ -12,8 +12,34 @@ h1 {
   font-size: 100px;
 }
 
-ul {
-  /*background-color: #B284BD; */
+.image-div {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.human-div, .mod-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.human, .mod {
+  width: 150px;
+  height: 150px;
+}
+
+.human {
+  background-color: white;
+}
+
+.court {
+  display: block;
+  width: 1000px;
+}
+
+#winnerLine, #scoreLine {
   margin: 0;
   background-color: #553591;;
   text-align: center;
@@ -21,14 +47,9 @@ ul {
 }
 
 #winnerLine {
-  font-size: px;
+  font-size: 40px;
 }
 
 #scoreLine {
-  font-size: 50px;
-}
-
-.court {
-  width: 80%;
-  
+  font-size: 70px;
 }
