@@ -44,20 +44,41 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function scorer(winner) {
+    if (winner.slice(0, 8) == 'You Win!') {
+        playerScore += 1;
+    } 
+
+    else if (winner.slice(0, 9) == 'You Lose!') {
+        computerScore += 1;
+    } 
+
+    return `${playerScore}-${computerScore}`
+}
+
+let playerScore = 0;
+let computerScore = 0;
+
 const rockImg = document.querySelector("img[src='./images/rock.jpg']");
 const paperImg = document.querySelector("img[src='./images/paper.jpg'");
 const scissorsImg = document.querySelector("img[src='./images/scissors.jpg'");
 
 rockImg.addEventListener("click", function() {
-    console.log(playRound('rock', getComputerChoice()));
+    winnerOfRound = playRound('rock', getComputerChoice());
+    console.log(winnerOfRound);
+    console.log(scorer(winnerOfRound));
 });
 
 paperImg.addEventListener("click", function() {
-    console.log(playRound('paper', getComputerChoice()));
+    winnerOfRound = playRound('paper', getComputerChoice());
+    console.log(winnerOfRound);
+    console.log(scorer(winnerOfRound));
 });
 
 scissorsImg.addEventListener("click", function() {
-    console.log(playRound('scissors', getComputerChoice()));
+    winnerOfRound = playRound('scissors', getComputerChoice());
+    console.log(winnerOfRound);
+    console.log(scorer(winnerOfRound));
 });
 
 /*
