@@ -26,6 +26,7 @@ h1 {
 }
 
 .human, .mod {
+  border-radius: 25px;
   width: 150px;
   height: 150px;
 }
@@ -48,8 +49,27 @@ h1 {
 
 #winnerLine {
   font-size: 40px;
+  padding-top: 20px;
 }
 
 #scoreLine {
   font-size: 70px;
+  padding-bottom: 10px;
+}
+
+.orange, .red, .blue {
+  border-width: 10px;
+  border-style: solid;
+}
+
+.orange {
+  border-color: orange;
+}
+
+.red {
+  border-color: red;
+}
+
+.blue {
+  border-color: blue;
 }

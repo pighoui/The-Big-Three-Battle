@@ -11,10 +11,32 @@ function getComputerChoice() {
     }
 }
 
+// Highlights the icons based on player selections
+function highlightIcon(playerSelection, computerSelection) {
+    nadImg.classList.remove('orange');
+    fedImg.classList.remove('red');
+    djoImg.classList.remove('blue');
+
+    nadModImg.classList.remove('orange');
+    fedModImg.classList.remove('red');
+    djoModImg.classList.remove('blue');
+
+    if (playerSelection == 'nad') nadImg.classList.add('orange');
+    else if (playerSelection == 'fed') fedImg.classList.add('red');
+    else if (playerSelection == 'djo') djoImg.classList.add('blue');
+
+    if (computerSelection == 'nad-mod') nadModImg.classList.add('orange');
+    else if (computerSelection == 'fed-mod') fedModImg.classList.add('red');
+    else if (computerSelection == 'djo-mod') djoModImg.classList.add('blue');
+}
+
 // Returns the winner of the round
 function playRound(playerSelection, computerSelection) {
+
+    highlightIcon(playerSelection, computerSelection);
+
     if (playerSelection == 'nad') {
-        if (computerSelection == 'nad-mod') { return 'Tie! Neither Nadal can grind out the other.'; }
+        if (computerSelection == 'nad-mod') {return 'Tie! Neither Nadal can grind out the other.'; }
         else if (computerSelection == 'fed-mod') { return 'You Win! Nadal beats fed-mod.'; }
         else if (computerSelection == 'djo-mod') { return 'You Lose! Djo-mod beats Nadal.'; }
     }
@@ -62,6 +84,10 @@ let computerScore = 0;
 const nadImg = document.querySelector("img[src='./images/nadal.png']");
 const fedImg = document.querySelector("img[src='./images/federer.png']");
 const djoImg = document.querySelector("img[src='./images/djokovic.png']");
+
+const nadModImg = document.querySelector("img[src='./images/nadal-mod.jpg'");
+const fedModImg = document.querySelector("img[src='./images/federer-mod.jpg'");
+const djoModImg = document.querySelector("img[src='./images/djokovic-mod.jpg'");
 
 nadImg.addEventListener("click", function() {
     winnerOfRound = playRound('nad', getComputerChoice());
