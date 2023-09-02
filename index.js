@@ -24,27 +24,21 @@ function getComputerChoice() {
 // Returns the winner of the round
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == 'rock') {
-        console.log('You chose ' + playerSelection);
-        console.log('Computer chose ' + computerSelection)
         if (computerSelection == 'rock') { return 'Tie!'; }
-        else if (computerSelection == 'paper') { return 'You Lose!'; }
-        else if (computerSelection == 'scissors') { return 'You Win!'; }
+        else if (computerSelection == 'paper') { return 'You Lose! Paper beats rock.'; }
+        else if (computerSelection == 'scissors') { return 'You Win! Rock beats scissors.'; }
     }
 
     else if (playerSelection == 'paper') {
-        console.log('You chose ' + playerSelection);
-        console.log('Computer chose ' + computerSelection)
-        if (computerSelection == 'rock') { return 'You Win!'; }
+        if (computerSelection == 'rock') { return 'You Win! Paper beats rock.'; }
         else if (computerSelection == 'paper') { return 'Tie!'; }
-        else if (computerSelection == 'scissors') { return 'You Lose!'; }
+        else if (computerSelection == 'scissors') { return 'You Lose! Scissors beats paper.'; }
     }
 
     else if (playerSelection == 'scissors') {
-        console.log('You chose ' + playerSelection);
-        console.log('Computer chose ' + computerSelection)
-        if (computerSelection == 'rock') { return 'You Lose!'; }
-        else if (computerSelection == 'paper') { return 'You Win!'; }
-        else if (computerSelection == 'scissors') { return 'tie!'; }
+        if (computerSelection == 'rock') { return 'You Lose! Rock beats scissors.'; }
+        else if (computerSelection == 'paper') { return 'You Win! Scissors beats paper.'; }
+        else if (computerSelection == 'scissors') { return 'Tie!'; }
     }
 }
 
@@ -56,11 +50,11 @@ function game() {
     while (playerScore != 3 && computerScore != 3) {
         round = playRound( getPlayerChoice(), getComputerChoice() ) ;
 
-        if (round == 'You Win!') {
+        if (round.slice(0, 8) == 'You Win!') {
             playerScore += 1;
             // prints winner or loser of round
             console.log(round);
-        } else if (round == 'You Lose!') {
+        } else if (round.slice(0, 9) == 'You Lose!') {
             computerScore += 1;
             console.log(round);
         } else {
