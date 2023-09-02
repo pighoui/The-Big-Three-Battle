@@ -3,35 +3,36 @@ function getComputerChoice() {
     // returns 1, 2 or 3 randomly
     let randInt = Math.floor(Math.random() * 3) + 1;
     if (randInt == 1) {
-        return "rock";
+        return "nad-mod";
     } else if (randInt == 2) {
-        return "paper";
+        return "fed-mod";
     } else {
-        return "scissors";
+        return "djo-mod";
     }
 }
 
 // Returns the winner of the round
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection == 'rock') {
-        if (computerSelection == 'rock') { return 'Tie!'; }
-        else if (computerSelection == 'paper') { return 'You Lose! Paper beats rock.'; }
-        else if (computerSelection == 'scissors') { return 'You Win! Rock beats scissors.'; }
+    if (playerSelection == 'nad') {
+        if (computerSelection == 'nad-mod') { return 'Tie! Neither Nadal can grind out the other.'; }
+        else if (computerSelection == 'fed-mod') { return 'You Win! Nadal beats fed-mod.'; }
+        else if (computerSelection == 'djo-mod') { return 'You Lose! Djo-mod beats Nadal.'; }
     }
 
-    else if (playerSelection == 'paper') {
-        if (computerSelection == 'rock') { return 'You Win! Paper beats rock.'; }
-        else if (computerSelection == 'paper') { return 'Tie!'; }
-        else if (computerSelection == 'scissors') { return 'You Lose! Scissors beats paper.'; }
+    else if (playerSelection == 'fed') {
+        if (computerSelection == 'nad-mod') { return 'You Lose! Nad-mod beats Federer.'; }
+        else if (computerSelection == 'fed-mod') { return 'Tie! The Federers seem to be able to read every single shot that comes their way.'; }
+        else if (computerSelection == 'djo-mod') { return 'You Win! Federer beats djo-mod.'; }
     }
 
-    else if (playerSelection == 'scissors') {
-        if (computerSelection == 'rock') { return 'You Lose! Rock beats scissors.'; }
-        else if (computerSelection == 'paper') { return 'You Win! Scissors beats paper.'; }
-        else if (computerSelection == 'scissors') { return 'Tie!'; }
+    else if (playerSelection == 'djo') {
+        if (computerSelection == 'nad-mod') { return 'You Win! Djokovic beats nad-mod.'; }
+        else if (computerSelection == 'fed-mod') { return 'You Lose! Fed-mod beats Djokovic.'; }
+        else if (computerSelection == 'djo-mod') { return "Tie! They're both just too fast for each other."; }
     }
 }
 
+// Increments score of players and displays scoreline
 function scorer(winner) {
 
     if (winner.slice(0, 8) == 'You Win!') {
@@ -45,35 +46,34 @@ function scorer(winner) {
     
     if (playerScore == 5) playerVictory();
     else if (computerScore == 5) computerVictory();
-
 }
 
 function playerVictory() {
-    document.body.innerHTML = "";
+    document.body.innerHTML = "You have won the match.";
 }
 
 function computerVictory() {
-    document.body.innerHTML = "";
+    document.body.innerHTML = "You have lost the match.";
 }
 
 let playerScore = 0;
 let computerScore = 0;
 
-const rockImg = document.querySelector("img[src='./images/rock.jpg']");
-const paperImg = document.querySelector("img[src='./images/paper.jpg'");
-const scissorsImg = document.querySelector("img[src='./images/scissors.jpg'");
+const nadImg = document.querySelector("img[src='./images/nadal.png']");
+const fedImg = document.querySelector("img[src='./images/federer.png']");
+const djoImg = document.querySelector("img[src='./images/djokovic.png']");
 
-rockImg.addEventListener("click", function() {
-    winnerOfRound = playRound('rock', getComputerChoice());
+nadImg.addEventListener("click", function() {
+    winnerOfRound = playRound('nad', getComputerChoice());
     scorer(winnerOfRound)
 });
 
-paperImg.addEventListener("click", function() {
-    winnerOfRound = playRound('paper', getComputerChoice());
+fedImg.addEventListener("click", function() {
+    winnerOfRound = playRound('fed', getComputerChoice());
     scorer(winnerOfRound)
 });
 
-scissorsImg.addEventListener("click", function() {
-    winnerOfRound = playRound('scissors', getComputerChoice());
+djoImg.addEventListener("click", function() {
+    winnerOfRound = playRound('djo', getComputerChoice());
     scorer(winnerOfRound)
 });
