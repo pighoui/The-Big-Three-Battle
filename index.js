@@ -1,15 +1,3 @@
-/*
-// Prompts user to choose rock, paper or scissors
-function getPlayerChoice() {
-    let playerChoice;
-    do {
-    playerChoice = prompt("Choose between rock, paper and scissors!");
-    playerChoice = playerChoice.toLowerCase();
-    } while (playerChoice != 'rock' && playerChoice != 'paper' && playerChoice != 'scissors');
-    return playerChoice;
-}
-*/
-
 // Randomly generates a computer choice
 function getComputerChoice() {
     // returns 1, 2 or 3 randomly
@@ -45,24 +33,27 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function scorer(winner) {
+
     if (winner.slice(0, 8) == 'You Win!') {
         playerScore += 1;
     } else if (winner.slice(0, 9) == 'You Lose!') {
         computerScore += 1;
     } 
+
+    document.querySelector("#winnerLine").textContent = winner;
+    document.querySelector("#scoreLine").textContent = `${playerScore}-${computerScore}`;
     
     if (playerScore == 5) playerVictory();
     else if (computerScore == 5) computerVictory();
 
-    return `${playerScore}-${computerScore}`
 }
 
 function playerVictory() {
-
+    document.body.innerHTML = "";
 }
 
 function computerVictory() {
-    
+    document.body.innerHTML = "";
 }
 
 let playerScore = 0;
@@ -74,55 +65,15 @@ const scissorsImg = document.querySelector("img[src='./images/scissors.jpg'");
 
 rockImg.addEventListener("click", function() {
     winnerOfRound = playRound('rock', getComputerChoice());
-    console.log(winnerOfRound);
-    console.log(scorer(winnerOfRound));
+    scorer(winnerOfRound)
 });
 
 paperImg.addEventListener("click", function() {
     winnerOfRound = playRound('paper', getComputerChoice());
-    console.log(winnerOfRound);
-    console.log(scorer(winnerOfRound));
+    scorer(winnerOfRound)
 });
 
 scissorsImg.addEventListener("click", function() {
     winnerOfRound = playRound('scissors', getComputerChoice());
-    console.log(winnerOfRound);
-    console.log(scorer(winnerOfRound));
+    scorer(winnerOfRound)
 });
-
-/*
-// Until someone has scored 3 points, the game continues
-function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-    
-    while (playerScore != 3 && computerScore != 3) {
-        round = playRound( getPlayerChoice(), getComputerChoice() ) ;
-
-        if (round.slice(0, 8) == 'You Win!') {
-            playerScore += 1;
-            console.log(round);
-        } 
-        
-        else if (round.slice(0, 9) == 'You Lose!') {
-            computerScore += 1;
-            console.log(round);
-        } 
-        
-        else {
-            // tie
-            console.log(round);
-        }
-
-        console.log(`${playerScore}-${computerScore}`)
-    }
-
-    if (playerScore == 3) {
-        return 'YOU WON THE MATCH :)';
-    } else {
-        return 'you lost the match :(';
-    }
-}
-
-console.log(game());
-*/
