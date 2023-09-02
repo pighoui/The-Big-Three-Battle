@@ -37,19 +37,19 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection == 'nad') {
         if (computerSelection == 'nad-mod') {return 'Tie! Neither Nadal can grind out the other.'; }
-        else if (computerSelection == 'fed-mod') { return 'You Win! Nadal beats fed-mod.'; }
-        else if (computerSelection == 'djo-mod') { return 'You Lose! Djo-mod beats Nadal.'; }
+        else if (computerSelection == 'fed-mod') { return 'You Win! Nadal shows off his prodigious speed against Darth Fader.'; }
+        else if (computerSelection == 'djo-mod') { return "You Lose! As a cyborg, the Joker's shot selection is simply too clinical."; }
     }
 
     else if (playerSelection == 'fed') {
-        if (computerSelection == 'nad-mod') { return 'You Lose! Nad-mod beats Federer.'; }
+        if (computerSelection == 'nad-mod') { return "You Lose! Lord Nadalmort just keeps assaulting Federer's one-hander."; }
         else if (computerSelection == 'fed-mod') { return 'Tie! The Federers seem to be able to read every single shot that comes their way.'; }
-        else if (computerSelection == 'djo-mod') { return 'You Win! Federer beats djo-mod.'; }
+        else if (computerSelection == 'djo-mod') { return 'You Win! Federer pulls off a cheeky SABR against the Joker.'; }
     }
 
     else if (playerSelection == 'djo') {
-        if (computerSelection == 'nad-mod') { return 'You Win! Djokovic beats nad-mod.'; }
-        else if (computerSelection == 'fed-mod') { return 'You Lose! Fed-mod beats Djokovic.'; }
+        if (computerSelection == 'nad-mod') { return 'You Win! Djokovic slides 4 metres to pull off an incredible passing shot against Lord Nadalovic.'; }
+        else if (computerSelection == 'fed-mod') { return 'You Lose! Lord Fader conjures up a ridiculous drop shot out of nowhere.'; }
         else if (computerSelection == 'djo-mod') { return "Tie! They're both just too fast for each other."; }
     }
 }
