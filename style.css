@@ -12,10 +12,27 @@ body {
 
 h1 {
   background-color: #553591;
-  font-size: 70px;
+  font-size: 50px;
   margin: 0;
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;  
+}
+
+#winnerLine, #scoreLine {
+  background-color: #553591;
+  margin: 0;
+  text-align: center;
+}
+
+#winnerLine {
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#scoreLine {
+  font-size: 50px;
+  padding-bottom: 10px;
 }
 
 .image-div {
@@ -45,23 +62,6 @@ h1 {
   border-radius: 10px;
   display: block;
   width: 700px;
-}
-
-#winnerLine, #scoreLine {
-  background-color: #553591;
-  margin: 0;
-  text-align: center;
-}
-
-#winnerLine {
-  font-size: 25px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-#scoreLine {
-  font-size: 50px;
-  padding-bottom: 10px;
 }
 
 .orange, .red, .blue {

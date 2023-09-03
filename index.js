@@ -64,8 +64,8 @@ function playRound(playerSelection, computerSelection) {
     }
 
     else if (playerSelection == 'djo') {
-        if (computerSelection == 'nad-mod') { return 'You Win! Djokovic slides 4 metres to pull off an incredible passing shot against Lord Nadalovic.'; }
-        else if (computerSelection == 'fed-mod') { return 'You Lose! Lord Fader conjures up a ridiculous drop shot out of nowhere.'; }
+        if (computerSelection == 'nad-mod') { return 'You Win! Djokovic slides 4 metres to pull off an incredible passing shot against Lord Nadalmort.'; }
+        else if (computerSelection == 'fed-mod') { return 'You Lose! Darth Fader conjures up a ridiculous drop shot out of nowhere.'; }
         else if (computerSelection == 'djo-mod') { return "Tie! They're both just too fast for each other."; }
     }
 }
