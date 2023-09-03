@@ -72,16 +72,18 @@ function playRound(playerSelection, computerSelection) {
 
 // Increments score of players and displays scoreline
 function scorer(winner) {
-
+    
     if (winner.slice(0, 8) == 'You Win!') {
         playerScore += 1;
     } else if (winner.slice(0, 9) == 'You Lose!') {
         computerScore += 1;
     } 
-
+    
+    // Changes text content of #winnerLine to return statement of playRound()
     document.querySelector("#winnerLine").textContent = winner;
     document.querySelector("#scoreLine").textContent = `${playerScore}-${computerScore}`;
     
+    // Displays endscreen once someone has won
     if (playerScore == 5) playerVictory();
     else if (computerScore == 5) computerVictory();
 }
