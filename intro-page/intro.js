@@ -63,9 +63,10 @@ window.addEventListener("keydown", changePage = function() {
 
     else {
         document.getElementById("text").innerHTML += `${nextLine()}</br></br>`; // Print line and two blank lines
+        document.querySelector("div[class='image-div blink']").innerHTML = "";
         h3.classList.remove("blink");
         h3.style.fontSize = "15px";
-        h3.innerHTML = "Press any key to continue.";
+        h3.innerHTML = "----- Press any key to continue. -----";
     }
     
 })
