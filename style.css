@@ -18,6 +18,12 @@ h1 {
   padding: 10px 0;
 }
 
+h3 {
+  animation: blink 1s inifinite;
+}
+
+/* Game page text start */
+
 #winnerLine, #scoreLine {
   background-color: #553591;
   margin: 0;
@@ -34,6 +40,10 @@ h1 {
   font-size: 50px;
   padding-bottom: 10px;
 }
+
+/* Game page text end */
+
+/* Game page images start */
 
 .image-div {
   display: flex;
@@ -64,6 +74,10 @@ h1 {
   width: 700px;
 }
 
+/* Game page images end */
+
+/* Icon borders start */
+
 .orange, .red, .blue {
   border-style: solid;
   border-width: 10px;
@@ -84,3 +98,5 @@ h1 {
 #text {
   color: #FFFFFF;
 }
+
+/* Icon borders end*/
