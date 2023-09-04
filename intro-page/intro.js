@@ -32,6 +32,9 @@ function prompt() {
     h3.textContent = "Do you agree to help?";
     h3.style.fontSize = "40px";
 
+    const buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("buttonContainer")
+
     const yesButton = document.createElement("button");
     yesButton.textContent = "Yes";
     yesButton.addEventListener('click', () => {
@@ -44,9 +47,9 @@ function prompt() {
         location.reload(); // Reloads intro.html
     })
 
-    const body = document.querySelector("body");
-    body.appendChild(yesButton);
-    body.appendChild(noButton);
+    buttonContainer.appendChild(yesButton);
+    buttonContainer.appendChild(noButton);
+    document.querySelector("body").appendChild(buttonContainer);
 }
 
 const h3 = document.querySelector("h3");
