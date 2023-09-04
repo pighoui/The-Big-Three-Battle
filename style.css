@@ -44,8 +44,9 @@ h3 {
 }
 
 button {
-  background-color: #553591;
-  color: inherit;
+  background-color: #EEECE7;
+  border: 5px solid #553591;
+  color: black;
   font-family: inherit;
   font-size: 30px;
   width: 30%
