@@ -27,19 +27,40 @@ function nextLine() {
 
 // Clears the story, asking user if they want to start the game
 function prompt() {
-    document.getElementById("text").innerHTML = "";
-    
+    document.getElementById("text").innerHTML = ""; // Clears story
+
+    document.querySelector("h3").textContent = "Do you agree to help?";
+
+    const yesButton = document.createElement("button");
+    yesButton.textContent = "Yes";
+    yesButton.addEventListener('click', () => {
+        window.location.replace("../index.html"); // Takes the user to game
+    })
+
+    const noButton = document.createElement("button");
+    noButton.textContent = "No";
+    noButton.addEventListener('click', () => {
+        location.reload(); // Reloads intro.html
+    })
+
+    const body = document.querySelector("body");
+    body.appendChild(yesButton);
+    body.appendChild(noButton);
 }
 
-window.addEventListener("keydown", (event) => {
-    
+window.addEventListener("keydown", changePage = function() {
+
+    // Reached the end of txt
     if (txtIndex == txt.length - 1) {
-        // Reached the end of txt
         prompt()
-    } else {
+
+        // Remove event listener to avoid prompt() being called multiple times
+        window.removeEventListener("keydown", changePage); 
+    }
+
+    else {
         document.getElementById("text").innerHTML += `${nextLine()}</br>`;
         document.querySelector("h3").innerHTML = "Press any key to continue.";
     }
     
 })
-
