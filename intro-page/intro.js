@@ -59,7 +59,7 @@ window.addEventListener("keydown", changePage = function() {
     }
 
     else {
-        document.getElementById("text").innerHTML += `${nextLine()}</br>`;
+        document.getElementById("text").innerHTML += `${nextLine()}</br></br>`; // Print line and two blank lines
         document.querySelector("h3").innerHTML = "Press any key to continue.";
     }
     
