@@ -29,7 +29,8 @@ function nextLine() {
 function prompt() {
     document.getElementById("text").innerHTML = ""; // Clears story
 
-    document.querySelector("h3").textContent = "Do you agree to help?";
+    h3.textContent = "Do you agree to help?";
+    h3.style.fontSize = "40px";
 
     const yesButton = document.createElement("button");
     yesButton.textContent = "Yes";
@@ -48,6 +49,8 @@ function prompt() {
     body.appendChild(noButton);
 }
 
+const h3 = document.querySelector("h3");
+
 window.addEventListener("keydown", changePage = function() {
 
     // Reached the end of txt
@@ -60,7 +63,9 @@ window.addEventListener("keydown", changePage = function() {
 
     else {
         document.getElementById("text").innerHTML += `${nextLine()}</br></br>`; // Print line and two blank lines
-        document.querySelector("h3").innerHTML = "Press any key to continue.";
+        h3.classList.remove("blink");
+        h3.style.fontSize = "15px";
+        h3.innerHTML = "Press any key to continue.";
     }
     
 })

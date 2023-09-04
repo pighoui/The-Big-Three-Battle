@@ -18,6 +18,16 @@ h1 {
   padding: 10px 0;
 }
 
+/* Story page start */
+
+h3 {
+  font-size: 40px;
+}
+
+#text {
+  margin-top: 15px;
+}
+
 .blink {
   animation: blink 2s linear infinite;
 }
@@ -25,6 +35,8 @@ h1 {
 @keyframes blink {
   50% {opacity: 0;}
 }
+
+/* Story page end */
 
 /* Game page text start */
 
