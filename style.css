@@ -18,8 +18,12 @@ h1 {
   padding: 10px 0;
 }
 
-h3 {
-  animation: blink 1s inifinite;
+.blink {
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  50% {opacity: 0;}
 }
 
 /* Game page text start */
