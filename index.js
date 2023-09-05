@@ -84,8 +84,8 @@ function scorer(winner) {
     document.querySelector("#scoreLine").textContent = `${playerScore}-${computerScore}`;
     
     // Displays endscreen once someone has won
-    if (playerScore == 5) playerVictory();
-    else if (computerScore == 5) computerVictory();
+    if (playerScore == 5) window.location.replace("./end-screen/victory.html");
+    else if (computerScore == 5) window.location.replace("./end-screen/defeat.html");
 }
 
 function playerVictory() {
