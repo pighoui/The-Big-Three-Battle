@@ -88,14 +88,6 @@ function scorer(winner) {
     else if (computerScore == 5) window.location.replace("./end-screen/defeat.html");
 }
 
-function playerVictory() {
-    document.body.innerHTML = "You have won the match.";
-}
-
-function computerVictory() {
-    document.body.innerHTML = "You have lost the match.";
-}
-
 let playerScore = 0;
 let computerScore = 0;
 
