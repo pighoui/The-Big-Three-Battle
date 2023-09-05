@@ -37,14 +37,28 @@ function prompt() {
 
     const yesButton = document.createElement("button");
     yesButton.textContent = "Yes";
+
+    yesButton.addEventListener('mouseover', () => {
+        yesButton.classList.add("hover"); // Button turns grey upon mouseover
+    })
+    yesButton.addEventListener('mouseout', () => {
+        yesButton.classList.remove("hover"); 
+    })
     yesButton.addEventListener('click', () => {
         window.location.replace("../index.html"); // Takes the user to game
     })
 
     const noButton = document.createElement("button");
     noButton.textContent = "No";
+
     noButton.addEventListener('click', () => {
         location.reload(); // Reloads intro.html
+    })
+    noButton.addEventListener('mouseover', () => {
+        noButton.classList.add("hover"); 
+    })
+    noButton.addEventListener('mouseout', () => {
+        noButton.classList.remove("hover"); 
     })
 
     buttonContainer.appendChild(yesButton);

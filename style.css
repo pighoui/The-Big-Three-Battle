@@ -53,6 +53,10 @@ button {
   width: 30%
 }
 
+.hover {
+  background-color: #D3D3D3;
+}
+
 /* Story page end */
 
 /* Game page text start */
