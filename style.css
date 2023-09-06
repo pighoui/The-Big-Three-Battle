@@ -137,3 +137,13 @@ button {
 }
 
 /* Icon borders end*/
+
+/* End screen start */
+
+#victor-div {
+  display: flex;
+  gap: 30px;
+  justify-content: center
+}
+
+/* End screen end */
