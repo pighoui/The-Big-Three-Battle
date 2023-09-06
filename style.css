@@ -140,7 +140,7 @@ button {
 
 /* End screen start */
 
-#victor-div {
+#victor-div, #loser-div {
   display: flex;
   gap: 30px;
   justify-content: center
