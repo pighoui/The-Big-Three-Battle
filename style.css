@@ -151,4 +151,9 @@ button {
   justify-content: center
 }
 
+#play-again {
+  width: 150px;
+  height: 100px;
+}
+
 /* End screen end */
